@@ -133,10 +133,17 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
 
 ##########################
 #  All Custom Alias
-
+alias rlpf="source ~/.zshrc"
 alias ll="ls -al"
-alias github="cd /Users/christos/Development/GitHub"
-alias bitfan="cd /Users/christos/Development/GitHub/bitfan"
+alias github="cd ~/Development/GitHub"
+alias bitfan="cd ~/Development/GitHub/bitfan"
+
+# Apps
+alias browse="open -a /Applications/Google\ Chrome.app"
+
+# Browse
+alias lhgrafana="browse http://localhost:3000/"
+alias lhinfluxdb="browse http://localhost:8086/"
 
 # Python
 alias p3="python3"
@@ -144,7 +151,17 @@ alias p3v="python3 --version"
 
 # Docker 
 alias dk="docker"
+alias dkcls="docker container ls -a"
+alias dkstart="docker container start"
+alias dkstop="docker container stop"
+alias dkrestart="docker container restart"
+alias dkrm="docker container rm"
+alias dkprune="docker container prune -f"
+
 dkssh(){
     docker exec -it $1 /bin/bash
 }
-alias dkcls="docker container ls -a"
+
+alias tt="echo test"
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
