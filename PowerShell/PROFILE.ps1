@@ -1,6 +1,7 @@
-Import-Module posh-git
-Import-Module oh-my-posh
-Set-PoshPrompt -Theme paradox
+# Uncomment only if you use Oh-my-Posh
+# Import-Module posh-git
+# Import-Module oh-my-posh
+# Set-PoshPrompt -Theme paradox
 
 function Invoke-Terraform { & terraform.exe $args }
 New-Alias -Name tf -Value Invoke-Terraform -Force -Option AllScope
